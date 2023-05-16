@@ -118,11 +118,11 @@ fetch(query)
     })
 }
 
-var searchHistory = localstorage.getItem('searchHistory');
+var inpHistory = localstorage.getItem('inpHistory');
 
-if (searchHistory){
-    searchHistory = JSON.parse(searchInputVal);
-    searchHistory.forEach(function(term){
+if (inpHistory){
+    inpHistory = JSON.parse(searchInputVal);
+    inpHistory.forEach(function(term){
         var inpVal = document.createElement('div');
         inpVal.textContent = [searchInputVal];
         resultCon.appendChild(inpVal);
@@ -131,5 +131,5 @@ if (searchHistory){
 
 
 
-    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+    localStorage.setItem('inpHistory', JSON.stringify(inpHistory));
 
