@@ -37,18 +37,14 @@ var currentDate = new Date();
 var dateEl = document.createElement('p');
 dateEl.innerHTML = currentDate.toDateString();
 resultCard.appendChild(dateEl);
-// // var img = document.createElement('img');
-// // img.src="https://openweathermap.org/img/wn/"+ resultObj.weather[0].icon + "@2x.png"; 
-// // resultBody.appendChild(img);
 
-// //     //var img = src " https://openweathermap.org/img/wn/10d/icon: "01d"@2x.png";
 
 var bodyConEl = document.createElement('p');
- bodyConEl.innerHTML += '<strong>Temp:</strong>' + resultObj.main.temp + '<br/>';
- bodyConEl.innerHTML += '<strong>Wind:</strong>' + resultObj.wind.speed + '<br/>';
- bodyConEl.innerHTML += '<strong>Humidity:</strong>' + resultObj.main.humidity + '<br/>';
+ bodyConEl.innerHTML += '<strong>Temp:</strong>' + resultObj.main.temp + 'F' + '<br/>';
+ bodyConEl.innerHTML += '<strong>Wind:</strong>' + resultObj.wind.speed + 'MPH' + '<br/>';
+ bodyConEl.innerHTML += '<strong>Humidity:</strong>' + resultObj.main.humidity + '%' + '<br/>';
 
-// //     resultCon.appendChild(resultCard);
+
 resultCard.append(bodyConEl);
 resultCon.appendChild(resultCard);
 }
@@ -74,9 +70,6 @@ function printResults1(resultObj){
       var currentDate = new Date();
      currentDate.setDate(currentDate.getDate() + 1);
 
-    //var img = document.createElement('img');
-    // // img.src="https://openweathermap.org/img/wn/"+ resultObj1.weather[0].icon + "@2x.png"; 
-    // // resultCon.appendChild(img);
 
     for (var i=0; i < 5; i++) {
     var forecastEl = document.createElement('div');
@@ -88,15 +81,15 @@ function printResults1(resultObj){
     forecastEl.appendChild(dateEl);
 
     var tempEl = document.createElement('p');
-    tempEl.innerHTML = '<strong>Temp:</strong>' + resultObj.main.temp;
+    tempEl.innerHTML = '<strong>Temp:</strong>' + resultObj.main.temp + 'F';
     forecastEl.appendChild(tempEl);
 
      var windEl = document.createElement('p');
-     windEl.innerHTML = '<strong>Wind:</strong>' + resultObj.wind.speed;
+     windEl.innerHTML = '<strong>Wind:</strong>' + resultObj.wind.speed + 'MPH';
     forecastEl.appendChild(windEl);
 
     var humidityEl = document.createElement('p');
-    humidityEl.innerHTML = '<strong>Humidity:</strong>' + resultObj.main.humidity;
+    humidityEl.innerHTML = '<strong>Humidity:</strong>' + resultObj.main.humidity + '%';
     forecastEl.appendChild(humidityEl);
 
     currentDate.setDate(currentDate.getDate() + 1);
