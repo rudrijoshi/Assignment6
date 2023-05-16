@@ -111,9 +111,9 @@ The following image shows the web application's appearance and functionality:
 
 You are required to submit BOTH of the following for review:
 
-* The URL of the functional, deployed application.
+* The URL of the functional, deployed application: https://rudrijoshi.github.io/Assignmentssa/
 
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
+* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project: https://github.com/rudrijoshi/Assignmentssa
 
 - - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
