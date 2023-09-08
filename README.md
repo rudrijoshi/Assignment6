@@ -1,119 +1,97 @@
-# 06 Server-Side APIs: Weather Dashboard
-
-# <Your-Project-Title>
+# Server-Side APIs: Weather Dashboard
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.: reference: w3School
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.: Javascript and WebApi like bootstrap, fetch and much more
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
-
-## Your Task
-
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
-
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The base URL should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
-
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
-
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+This Weather Dashboard is a user-friendly web application designed for travelers who
+want to stay informed about the weather outlook for multiple cities. Whether you're
+planning a weekend getaway or an extended vacation, this dashboard provides you with
+essential weather information to help you make informed travel decisions
 
 ## User Story
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+As a traveler, I want to see the weather outlook for multiple cities so that I can plan my trip accordingly.
 
 ## Acceptance Criteria
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+To meet the needs of our users, we have implemented the following features in our Weather Dashboard:
 
-## Mock-Up
+1. Weather Search
 
-The following image shows the web application's appearance and functionality:
+* When you visit the dashboard, you'll find a user-friendly form input to search for a city.
+* Upon entering a city and initiating a search:
+ * You will be presented with both current and future weather conditions for that city.
+ * The searched city will be added to your search history for easy access.
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+2. Current Weather Conditions
 
+* When viewing current weather conditions for a city, you will see:
+ * The city name
+ * The date
+ * An icon representation of current weather conditions
+ * The temperature
+ * The humidity
+ * The wind speed
 
-## Review
+3. Future Weather Conditions
 
-You are required to submit BOTH of the following for review:
+* For your convenience, a 5-day weather forecast is displayed for the city you searched for.
+* Each forecast includes:
+ * The date
+ * An icon representation of weather conditions
+ * The temperature
+ * The wind speed
+ * The humidity
 
-* The URL of the functional, deployed application: https://rudrijoshi.github.io/Assignmentssa/
+4. Search History
 
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project: https://github.com/rudrijoshi/Assignmentssa
+* In case you want to revisit the weather details of a previously searched city, you can click on that city's name in the search history.
+* Clicking on a city in the search history will again present you with both current and future weather conditions for that city.
 
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## How to Use
+
+* Visit the Weather Dashboard website.
+* In the provided form input, enter the name of the city you want to check the weather for.
+* Click the "Search" button to retrieve weather information.
+* Explore the current and future weather conditions for the selected city.
+* To check the weather for a different city, simply enter a new city name in the form and repeat the process.
+* If you want to revisit the weather for a previously searched city, click on that
+city's name in the search history.
+
+## Technologies Used
+
+HTML
+CSS
+JavaScript
+Third-party weather data API (e.g., OpenWeatherMap)
+
+## Credits
+
+I referenced the tutorials available on https://www.w3schools.com/ to seek guidance and assistance, tapping into their
+wealth of knowledge to enhance the quality and precision of my project.
+
+## Future Enhancements
+
+We are continuously working on improving the Weather Dashboard and plan to implement
+the following features in the future:
+
+* Unit selection (e.g., Fahrenheit vs. Celsius)
+* Geolocation support for current location weather
+* Additional weather details (e.g., precipitation, UV index)
+* User account and saving favorite cities
+
+We hope you find our Weather Dashboard helpful for planning your trips and staying
+informed about the weather conditions in various cities. If you have any feedback or
+suggestions for improvement, please feel free to reach out. Safe travels!
+
+## Usage
+
+Screenshot of weather dashboard
+
+![The weather app includes a search option, a list of cities, and a five-day
+forecast and current weather conditions for Atlanta.](./Assets/screenst.png)
+
+## Links
+
+* The URL of the functional, deployed application: https://rudrijoshi.github.io/Weather_dashboard/
+
+* The URL of the GitHub repository: https://github.com/rudrijoshi/Weather_dashboard

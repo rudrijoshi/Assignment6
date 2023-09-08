@@ -1,6 +1,8 @@
 var APIKey = "39336e5a4b6e09ecd7e0394de48a7de3";
-
+var cityName = [];
 var searchFormEl = document.querySelector('#search-form');
+var resultInputEl =  document.querySelector('#result-input');
+var resultCon = document.querySelector('#result-content');
 
 function handleSearchFormSubmit(event) {
     event.preventDefault();
@@ -11,13 +13,55 @@ function handleSearchFormSubmit(event) {
         console.error('You need a search input value!');
         return;
     }
+    
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInputVal + "&appid=" + APIKey;
     searchApi(queryURL);
+    savedHistory
 }
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
 
-var resultInputEl =  document.querySelector('#result-input');
-var resultCon = document.querySelector('#result-content');
+function savedHistory(city) {
+    if(cityName.indexOf(city) !==-1)
+    return;
+    cityName.push(city);
+    localStorage.setItem('inputHistory', JSON.stringify(cityName));
+    displayHistory();
+}
+ 
+function displayHistory(city){
+document.getElementById("history").innerHTML = "";
+for(var i= cityName.length-1; i >=0; i--){
+    var btn = document.createElement("button");
+    btn.textContent = cityName[i];
+    btn.classList.add("history-btn");
+    document.getElementById("history").append(btn);
+}
+
+}
+
+function pageLoad(){
+    var inpHistory = localStorage.getItem('inputHistory');
+
+if (inpHistory){
+    cityName = JSON.parse(inpHistory);
+}
+displayHistory();
+}
+pageLoad();
+document.getElementById("history").onclick= handleSearchHistoryClick;
+
+function handleSearchHistoryClick(e){
+if(!e.target.matches(".history-btn"))
+return;
+var searchInputVal = e.target.textContent;
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInputVal + "&appid=" + APIKey;
+searchApi(queryURL);
+}
+
+
+
+
+
 
 function getParams() {
     var searchParamArr = document.location.search.split('&');
@@ -117,19 +161,4 @@ fetch(query)
         console.error(error);
     })
 }
-
-var inpHistory = localstorage.getItem('inpHistory');
-
-if (inpHistory){
-    inpHistory = JSON.parse(searchInputVal);
-    inpHistory.forEach(function(term){
-        var inpVal = document.createElement('div');
-        inpVal.textContent = [searchInputVal];
-        resultCon.appendChild(inpVal);
-    });
-}
-
-
-
-    localStorage.setItem('inpHistory', JSON.stringify(inpHistory));
 
